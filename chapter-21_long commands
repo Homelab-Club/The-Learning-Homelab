@@ -1,0 +1,4 @@
+# 21.7 On HC-LX-CONTAI03, open the configuration: app.ini. Set:
+[server]
+DOMAIN = gitea.homelabclub.local
+ROOT_URL = http://gitea.homelabclub.local/
