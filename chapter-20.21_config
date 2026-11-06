@@ -1,0 +1,5 @@
+Host gitea
+    HostName 10.10.20.7
+    User gitea
+    IdentityFile ~/.ssh/gitea_ed25519
+    IdentitiesOnly yes
