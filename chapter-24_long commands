@@ -1,0 +1,11 @@
+# 24.18 Type the following command for a permanent system PATH and availability for OpenSSL:
+[Environment]::SetEnvironmentVariable(“Path”,[Environment]::GetEnvironmentVariable(“Path”,”Machine”) + “;C:\Program Files\OpenSSL-Win64\bin”,”Machine”)
+
+# 24.18 Extract the server certificate with the command: 
+openssl pkcs12 -in gitea.homelabclub.local.pfx -clcerts -nokeys -out gitea.crt
+
+# 24.18 Now extract the private key with the command:
+openssl pkcs12 -in gitea.homelabclub.local.pfx -nocerts -nodes -out gitea.key
+
+# 24.18 Extract the CA certificate with the command:
+openssl pkcs12 -in gitea.homelabclub.local.pfx -cacerts -nokeys -out homelabclub-ca.crt
