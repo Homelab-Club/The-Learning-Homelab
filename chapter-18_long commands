@@ -1,3 +1,19 @@
 # 18.15 Running the Playbook. Run:
 cd ~/ansible
 ansible-playbook -i inventory baseline.yml -K
+
+# 18.22 Add a new group in the Ansible "inventory" file:
+[windows_servers]
+HC-VM-SERVER01 ansible_host=10.10.20.2
+
+[windows_servers:vars]
+ansible_user=homelabadmin@homelabclub.local
+ansible_connection=winrm
+ansible_port=5985
+ansible_winrm_transport=ntlm
+
+# 18.22 Test the Windows server. Run:
+ansible -i inventory windows_servers -m ansible.windows.win_shell -a "hostname" -k
+
+
+
