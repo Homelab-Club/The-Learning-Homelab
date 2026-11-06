@@ -1,0 +1,13 @@
+# Homelab Club Ltd. Ansible Inventory
+
+[linux_servers]
+HC-VM-SERVER04 ansible_host=10.10.20.4 ansible_user=homelabadmin
+
+[windows_servers]
+HC-VM-SERVER01 ansible_host=10.10.20.2
+
+[windows_servers:vars]
+ansible_user=homelabadmin@homelabclub.local
+ansible_connection=winrm
+ansible_port=5985
+ansible_winrm_transport=ntlm
