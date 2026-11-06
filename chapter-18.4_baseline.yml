@@ -1,0 +1,12 @@
+---
+- name: Linux Server Baseline
+  hosts: linux_servers
+  become: true
+
+  tasks:
+    - name: Gather system information
+      ansible.builtin.setup:
+
+    - name: Display hostname
+      ansible.builtin.debug:
+        var: ansible_hostname
