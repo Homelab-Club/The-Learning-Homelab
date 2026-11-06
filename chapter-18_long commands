@@ -1,0 +1,3 @@
+# 18.15 Running the Playbook. Run:
+cd ~/ansible
+ansible-playbook -i inventory baseline.yml -K
