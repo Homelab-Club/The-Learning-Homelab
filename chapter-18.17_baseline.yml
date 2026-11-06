@@ -1,0 +1,16 @@
+---
+- name: Linux Server Baseline
+  hosts: linux_servers
+  become: true
+
+  tasks:
+    - name: Ensure curl is installed
+      ansible.builtin.apt:
+        name: curl
+        state: present
+        update_cache: true
+
+    - name: Ensure htop is installed
+      ansible.builtin.apt:
+        name: htop
+        state: present
