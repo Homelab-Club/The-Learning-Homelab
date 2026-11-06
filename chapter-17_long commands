@@ -1,0 +1,8 @@
+# 17.10 Configure HC-VM-SERVER01 as the Domain Time Source. Run:
+w32tm /config /manualpeerlist:"pool.ntp.org,0x8" /syncfromflags:manual /reliable:yes /update
+
+# 17.10 Verify the Windows NTP Firewall Rule. Run:
+Get-NetFirewallRule | Where-Object {$_.DisplayName -like "*NTP*"} | Select-Object DisplayName, Enabled, Direction, Action
+
+# 17.10 You can also check the Windows Time Service firewall group. Run:
+Get-NetFirewallRule -DisplayGroup "Windows Time Service" | Select-Object DisplayName, Enabled, Direction, Action
