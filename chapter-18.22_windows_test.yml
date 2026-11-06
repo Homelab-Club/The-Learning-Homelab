@@ -1,0 +1,12 @@
+---
+- name: Test Windows Server Management
+  hosts: windows_servers
+
+  tasks:
+    - name: Display Windows hostname
+      ansible.windows.win_shell: hostname
+      register: hostname_result
+
+    - name: Display result
+      ansible.builtin.debug:
+        var: hostname_result.stdout
