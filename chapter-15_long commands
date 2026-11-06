@@ -1,0 +1,34 @@
+# chapter 15.4 Netplan interface configuration
+network:
+  version: 2
+  ethernets:
+    ens18:
+      addresses:
+        - 10.10.20.3/24
+      routes:
+        - to: default
+          via: 10.10.20.1
+      nameservers:
+        search:
+          - homelabclub.local
+        addresses:
+          - 10.10.20.2
+
+# chapter 15.5 Netplan interface configuration
+  network:
+  version: 2
+  ethernets:
+    ens18:
+      addresses:
+        - 10.10.20.4/24
+      routes:
+        - to: default
+          via: 10.10.20.1
+      nameservers:
+        search:
+          - homelabclub.local
+        addresses:
+          - 10.10.20.2
+
+
+  
